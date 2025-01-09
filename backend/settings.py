@@ -18,6 +18,8 @@ FIREBASE_CRED = credentials.Certificate("keys/landing-key.json")
 firebase_admin.initialize_app(FIREBASE_CRED, {
     'databaseURL': 'https://landing-bab40-default-rtdb.firebaseio.com/'
 })
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
