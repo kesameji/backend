@@ -2,9 +2,14 @@ from django.shortcuts import render
 import requests
 import json
 
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
+
 # Create your views here.
 from django.http import HttpResponse
 
+@login_required
+@permission_required('main.index_viewer', raise_exception=True)
 def index(request):
     current_url = request.build_absolute_uri()
     url = current_url + '/api/v1/landing'
